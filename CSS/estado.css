@@ -1,0 +1,124 @@
+.title {
+    padding: 6px 26px;
+    color: #9f8ad0;
+    font-size: 32px;
+}
+
+.subtitle {
+    text-align: center;
+    font-weight: 100;
+    color: #9f8ad0;
+    font-size: 26px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.link:hover {
+    color: rgb(132, 0, 255);
+}
+
+body.dark .link:hover {
+    color: #8400ff;
+}
+
+.button-crear {
+    height: 40px;
+    font-size: 16px;
+    margin: 26px auto;
+    width: 150px;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown .options {
+    border: none;
+    padding: 8px 16px;
+    background: #3364ce;
+    color: #fff;
+    border-radius: 11px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.dropdown button:hover {
+    background: #104ed3;
+}
+
+.dropdown .row {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 11px;
+    visibility: hidden;
+    position: absolute;
+    min-width: 100%;
+    opacity: 0;
+    transition: .3s;
+}
+
+.dropdown:hover .row {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown .atajos {
+    display: block;
+    text-decoration: none;
+    padding: 8px;
+    color: #000;
+    transition: .1s;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.atajos {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    height: 40px;
+    border: none;
+    background: transparent;
+}
+
+.dropdown .row .atajos:hover {
+    background: rgb(201, 201, 201);
+}
+
+.table {
+    padding: 6px 26px;
+}
+
+table {
+    background: #fff;
+    text-align: left;
+    border-collapse: collapse;
+    width: 80%;
+} 
+
+th, td {
+    /*border: solid 1px black;*/
+    padding: 11px;
+}
+td a{
+    text-decoration: none;
+    color: #000;
+}
+
+td a:hover {
+    color: #8400ff;
+}
+
+thead {
+    background-color: rgb(43, 43, 43);
+    color: #fff;
+}
+
+tr:hover td{
+    background: rgba(129, 129, 129, 0.288);
+}
