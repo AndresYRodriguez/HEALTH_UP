@@ -43,7 +43,7 @@
         <?php } ?>
 
         <?php
-        $consulta = "SELECT*FROM fisica WHERE Rutinas='Fondos'";
+        $consulta = "SELECT*FROM fisica WHERE Rutinas='Press de banca con barra'";
         $resultado = mysqli_query($con, $consulta);
 
         while ($row = mysqli_fetch_array($resultado)) {
@@ -72,7 +72,7 @@
         <?php } ?>
 
         <?php
-        $consulta = "SELECT*FROM fisica WHERE Rutinas='Press banca inclinado'";
+        $consulta = "SELECT*FROM fisica WHERE Rutinas='Press de banca con barra'";
         $resultado = mysqli_query($con, $consulta);
 
         while ($row = mysqli_fetch_array($resultado)) {
@@ -101,7 +101,7 @@
         <?php } ?>
 
         <?php
-        $consulta = "SELECT*FROM fisica WHERE Rutinas='>Aperturas con mancuernas'";
+        $consulta = "SELECT*FROM fisica WHERE Rutinas='Press de banca con barra'";
         $resultado = mysqli_query($con, $consulta);
 
         while ($row = mysqli_fetch_array($resultado)) {
