@@ -15,12 +15,12 @@ if (isset($_SESSION['Correo'])) {
     }
 }
 
-/*if (isset($_POST['public'])) {
+if (isset($_POST['public'])) {
     $file_name = $_FILES['Video']['name'];
     $file_temp = $_FILES['Video']['tmp_name'];
     $file_size = $_FILES['Video']['size'];
-    $Rutina = $_POST['Rutina'];
-    $Descripcion = $_POST['Descripcion'];
+    $Titulo = trim($_POST['Titulo']);
+    $Descripcion = trim($_POST['Descripcion']);
 
     if ($file_size < 50000000) {
         $file = explode('.', $file_name);
@@ -28,9 +28,9 @@ if (isset($_SESSION['Correo'])) {
         $allowed_ext = array('avi', 'flv', 'wmv', 'mov', 'mp4');
         if (in_array($end, $allowed_ext)) {
             $name = date("Ymd") . time();
-            $Video = 'updoad/videos/' . $name . "." . $end;
+            $Video = 'upload/videos/' . $name . "." . $end;
             if (move_uploaded_file($file_temp, $Video)) {
-                mysqli_query($conn, "INSERT INTO fisica(Rutinas, Videos, Descripcion) VALUES ('$Rutina','$Video','$Descripcion')");
+                mysqli_query($con, "INSERT INTO socioemocional(Titulo, Videos, Audios, Descripcion) VALUES ('$Titulo', '$Video','','$Descripcion')");
                 echo "<script>alert('Rutina subida')</script>";
                 echo "<script>window.location = 'fisico.php'</script>";
             }
@@ -42,7 +42,7 @@ if (isset($_SESSION['Correo'])) {
         echo "<script>alert('El video es demasiado grande para subirlo')</script>";
         echo "<script>window.location = 'fisico.php'</script>";
     }
-}*/
+}
 ?>
 
 <!DOCTYPE html>
@@ -62,11 +62,15 @@ if (isset($_SESSION['Correo'])) {
             <form action="" method="POST" enctype="multipart/form-data">
                 <div class="form">
                     <div class="grupo">
+                        <input type="text" name="Titulo" class="formu text" required><span class="barra"></span>
+                        <label for="">Titulo</label>
+                    </div>
+                    <div class="grupo">
                         <input type="file" name="Video" class="formu text" required><span class="barra"></span>
                         <label for="">Video</label>
                     </div>
                     <div class="grupo">
-                        <input type="file" name="Audio" class="formu text" required><span class="barra"></span>
+                        <input type="file" name="Audio" class="formu text"><span class="barra"></span>
                         <label for="">Audio</label>
                     </div>
                     <div class="grupo">
@@ -108,6 +112,7 @@ if (isset($_SESSION['Correo'])) {
                 <p class="text">Esta es una rutina con la cual vas a poder a controlar un poco mas tu humor y no sucumbir ante tu ira</p>
                 <figure>
                     <img src="./CSS/IMG/public/ira.jpg" alt="">
+                    <audio src=""></audio>
                     <div class="capa">
                         <a href="ira.php">
                             <h3 class="text">Rutina control ira</h3>
