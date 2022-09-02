@@ -19,7 +19,7 @@ if (isset($_SESSION['Correo'])) {
         $Genero = $row['Genero'];
         $Fecha_nacimiento = $row['Fecha_nacimiento'];
         $Correo = $row['Correo'];
-        $Contraseña = md5($row['Contraseña']);
+        $Contraseña = $row['Contraseña'];
     }
 }
 
@@ -29,7 +29,6 @@ if (isset($_POST['actualizar'])) {
     $Nombres = $_POST['Nombres'];
     $Apellidos = $_POST['Apellidos'];
     $Contraseña = md5($_POST['Contraseña']);
-    $ConfContraseña = md5($_POST['ConfContraseña']);
 
     $actualizar = "UPDATE persona SET Nombres = '$Nombres', Apellidos = '$Apellidos', Contraseña = '$Contraseña' WHERE Correo='$_SESSION[Correo]'";
     $result = mysqli_query($con, $actualizar);

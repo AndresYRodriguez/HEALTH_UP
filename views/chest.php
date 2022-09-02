@@ -21,7 +21,7 @@
         ?>
             <h2 class="subtitulo"><?php echo ("$Rutina"); ?></h2>
             <div class="contenedor-servicio">
-                <div class="contenedor-servicio-imm">
+                <div class="contenedor-servicio-video">
                     <?php echo ("<video src='$Videos' controls='controls' autoplay muted height='350px' width='420px'/>"); ?>
                 </div>
                 <div class="checklist-servicio">

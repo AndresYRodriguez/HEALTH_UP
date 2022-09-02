@@ -3,12 +3,13 @@ require("config/config.php");
 
 		try{
 			if(isset($_POST['Correo']) && !empty($_POST['Correo'])){
-                $Contraseña = substr( md5(microtime()), 1, 10);
+                $Contraseña = substr(microtime(), 1, 10);
+                $ContrEncript = md5($Contraseña);
                 $Correo = $_POST['Correo'];
                 
                
                 
-                $sql = "UPDATE persona SET Correo='$Correo' WHERE Contraseña='$Contraseña'";
+                $sql = "UPDATE persona SET Correo='$Correo' WHERE Contraseña='$ContrEncript'";
 
                 if ($con->query($sql) === TRUE) {
                     echo "usuario modificado correctamente ";
