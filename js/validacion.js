@@ -1,5 +1,5 @@
 const input = document.querySelector(".Email-input"),
-    emailIcon = document.querySelector(".email-icon")
+      emailIcon = document.querySelector(".email-icon")
 
 input.addEventListener("keyup", () => {
     let pattern = '@gmail.com';

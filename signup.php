@@ -25,15 +25,17 @@ if (isset($_SESSION['Correo'])) {
     <div class="form">
       <h1>Sign up</h1>
       <div class="grupo">
-        <input type="text" class="formu" name="Nombres" required><span class="barra"></span>
+        <input type="text" class="Nombres formu" name="Nombres" required><span class="barra"></span>
         <label for="">Nombres</label>
+        <i class="uil uil-user user"></i>
       </div>
       <div class="grupo">
-        <input type="text" class="formu" name="Apellidos" required><span class="barra"></span>
+        <input type="text" class="Nombres formu" name="Apellidos" required><span class="barra"></span>
         <label for="">Apellidos</label>
+        <i class="uil uil-user user"></i>
       </div>
       <div class="grupo">
-        <input type="date" class="formu" name="Fecha_nacimiento" required><span class="barra"></span>
+        <input type="date" class="Fecha formu" name="Fecha_nacimiento" required><span class="barra"></span>
 
       </div>
       <div class="grupo">
@@ -42,6 +44,7 @@ if (isset($_SESSION['Correo'])) {
           <option value="Femenino">Femenino</option>
           <option value="Masculino">Masculino</option>
         </select>
+        <label for="">Genero</label>
       </div>
       <div class="grupo">
         <input type="email" class="Email-input formu" name="Correo" required><span class="barra"></span>
