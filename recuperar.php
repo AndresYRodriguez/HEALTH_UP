@@ -9,7 +9,7 @@ require("config/config.php");
                 
                
                 
-                $sql = "UPDATE persona SET Correo='$Correo' WHERE Contraseña='$ContrEncript'";
+                $sql = "UPDATE persona SET Contraseña='$ContrEncript' WHERE Correo='$Correo'";
 
                 if ($con->query($sql) === TRUE) {
                     echo "usuario modificado correctamente ";
