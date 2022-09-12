@@ -228,6 +228,11 @@
     align-items: center;
     color: #fff;
   }
+
+  .social-media-icon:hover {
+    color: #00eeff;
+  }
+
   .social-media-icon i{
     font-size: 30px;
     line-height: 60px;
@@ -241,7 +246,7 @@
     margin-bottom: 60px;
   }
 
-  a{
+  .btn{
     text-decoration: none;
     color: rgb(0, 0, 0);
     padding: 15px 60px;
@@ -253,7 +258,7 @@
     /*0transition: background-color .3s;*/
   }
 
-  a:hover {
+  .btn:hover {
     color: #00eeff;
     /*background: #00eeff;*/
   }

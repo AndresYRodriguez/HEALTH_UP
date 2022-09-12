@@ -15,34 +15,32 @@ if (isset($_SESSION['Correo'])) {
     }
 }
 
-/*if (isset($_POST['public'])) {
+if (isset($_POST['public'])) {
+    $Titulo = trim($_POST['Titulo']);
+    $Descripcion = trim($_POST['Descripcion']);
     $file_name = $_FILES['Video']['name'];
     $file_temp = $_FILES['Video']['tmp_name'];
     $file_size = $_FILES['Video']['size'];
-    $Rutina = $_POST['Rutina'];
-    $Descripcion = $_POST['Descripcion'];
+
+    $File_name = $_FILES['Video']['name'];
+    $File_temp = $_FILES['Video']['tmp_name'];
+    $File_size = $_FILES['Video']['size'];
 
     if ($file_size < 50000000) {
-        $file = explode('.', $file_name);
-        $end = end($file);
-        $allowed_ext = array('avi', 'flv', 'wmv', 'mov', 'mp4');
-        if (in_array($end, $allowed_ext)) {
-            $name = date("Ymd") . time();
-            $Video = 'updoad/videos/' . $name . "." . $end;
-            if (move_uploaded_file($file_temp, $Video)) {
-                mysqli_query($conn, "INSERT INTO fisica(Rutinas, Videos, Descripcion) VALUES ('$Rutina','$Video','$Descripcion')");
-                echo "<script>alert('Rutina subida')</script>";
-                echo "<script>window.location = 'fisico.php'</script>";
-            }
-        } else {
-            echo "<script>alert('formato del video incorrecto')</script>";
+        $NameVideo = date("Ymd") . time();
+        $Video = 'upload/' . $NameVideo . ".mp4";
+        $NameAudio = date("Ymd") . time();
+        $Audio = 'upload/' . $NameAudio . ".mp3";
+        if (move_uploaded_file($file_temp, $Video)) {
+            $sql = mysqli_query($con, "INSERT INTO socioemocional(ID_C, Titulo, Videos, Audios, Descripcion) VALUES ('1','$Titulo','$Video','$Audio','$Descripcion')");
+            echo "<script>alert('Rutina subida')</script>";
             echo "<script>window.location = 'fisico.php'</script>";
+        } else {
+            echo "<script>alert(No fue posible cargar los archivos')</script>";
+            echo "<script>window.location = 'socioemocional.php'</script>";
         }
-    } else {
-        echo "<script>alert('El video es demasiado grande para subirlo')</script>";
-        echo "<script>window.location = 'fisico.php'</script>";
     }
-}*/
+}
 ?>
 
 <!DOCTYPE html>
@@ -62,6 +60,10 @@ if (isset($_SESSION['Correo'])) {
             <form action="" method="POST" enctype="multipart/form-data">
                 <div class="form">
                     <div class="grupo">
+                        <input type="text" name="Titulo" class="formu text" required><span class="barra"></span>
+                        <label for="">Titulo</label>
+                    </div>
+                    <div class="grupo">
                         <input type="file" name="Video" class="formu text" required><span class="barra"></span>
                         <label for="">Video</label>
                     </div>
@@ -74,7 +76,7 @@ if (isset($_SESSION['Correo'])) {
                         <label for="">Descripcion</label>
                     </div>
                     <div class="submit">
-                    <button type="submit" name="public" class="public">Publicar</button>
+                        <button type="submit" name="public" class="public">Publicar</button>
                     </div>
                 </div>
             </form>
@@ -104,17 +106,24 @@ if (isset($_SESSION['Correo'])) {
                 <p class="text">Esta es una rutina con la cual vas a poder a controlar un poco mas tu humor y tratar de que no te sere la tristeza</p>
             </div>
         <?php else : ?>
-            <div class="contenedor1">
-                <p class="text">Esta es una rutina con la cual vas a poder a controlar un poco mas tu humor y no sucumbir ante tu ira</p>
-                <figure>
-                    <img src="./CSS/IMG/public/ira.jpg" alt="">
-                    <div class="capa">
-                        <a href="ira.php">
-                            <h3 class="text">Rutina control ira</h3>
-                        </a>
-                    </div>
-                </figure>
-            </div>
+            <?php
+            $consulta = "SELECT*FROM categoria WHERE Titulo='ira'";
+            $resultado = mysqli_query($con, $consulta);
+
+            while ($row = mysqli_fetch_assoc($resultado)) {
+            ?>
+                <div class="contenedor1">
+                    <p class="text"><?php echo $row['Descripcion']; ?></p>
+                    <figure>
+                        <img src="data:Imagen/jpg;base64, <?php echo base64_encode($row['Imagen']); ?>" alt="">
+                        <div class="capa">
+                            <a href="ira.php">
+                                <h3 class="text"><?php echo $row['Titulo'];; ?></h3>
+                            </a>
+                        </div>
+                    </figure>
+                </div>
+            <?php } ?>
             <div class="contenedor">
                 <figure>
                     <img src="./CSS/IMG/public/tristeza.jpg" alt="">

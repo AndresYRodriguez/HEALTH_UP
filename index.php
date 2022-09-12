@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/index.css">
-    <link rel="icon" href="CSS/IMG/public/logo-health_up.png">
+    <link rel="icon" href="CSS/IMG/logo-health_up.png">
     <title>Acerca | Health_up</title>
 </head>
 
@@ -29,9 +29,9 @@
         <div class="contenedor head">
             <h1 class="titulo">Conviertete en tu mejor version</h1>
             <div class="link">
-            <a href="signin.php">
-                <p class="copy">Healt up</p>
-            </a>
+                <a href="signin.php" class="btn">
+                    <p class="copy">Healt up</p>
+                </a>
             </div>
         </div>
     </header>
@@ -99,6 +99,9 @@
                 </a>
                 <a href="https://www.instagram.com/healthup_oficial/" class="social-media-icon">
                     <i class='bx bxl-instagram'></i>
+                </a>
+                <a href="https://twitter.com/HEALTHUP14" class="social-media-icon">
+                    <i class='bx bxl-twitter'></i>
                 </a>
             </div>
         </div>

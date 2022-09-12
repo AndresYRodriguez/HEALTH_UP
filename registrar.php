@@ -10,6 +10,7 @@ if (isset($_POST['Registrarse'])) {
     $Correo = trim($_POST['Correo']);
     $Contraseña = trim(md5($_POST['Contraseña']));
 
+
     $consulta = "INSERT INTO persona(Nombres, Apellidos, Tipo_Usuario, Genero, Fecha_nacimiento, Correo, Contraseña) VALUES ('$Nombres','$Apellidos','Usuario','$Genero','$Fecha_nacimiento','$Correo','$Contraseña')";
 
     $VerCorrreo = mysqli_query($con, "SELECT*FROM persona WHERE Correo='$Correo'");

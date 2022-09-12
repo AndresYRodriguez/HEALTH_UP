@@ -28,6 +28,7 @@ if (isset($_SESSION['Correo'])) {
       <div class="grupo">
         <input type="email" class="formu" name="Correo" required><span class="barra"></span>
         <label for="">Correo Electronico</label>
+        <i class="uil uil-envelope email-icon"></i>
       </div>
       <div class="grupo">
         <input type="password" name="Contraseña" class="Contraseña formu" required><span class="barra"></span>
