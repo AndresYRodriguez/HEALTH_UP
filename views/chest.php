@@ -21,7 +21,7 @@
             <h2 class="subtitulo">Rutina de pecho</h2>
             <div class="contenedor-servicio">
                 <div class="contenedor-servicio-video">
-                    <video src="data:Video/mp4;base64, <?php echo base64_encode($row['Videos']); ?>" height="350px" width="420px" /*controls*/ autoplay muted></video>
+                    <video src="data:Video/mp4;base64, <?php echo base64_encode($row['Videos']); ?>" height="350px" width="420px" /*controls*/ autoplay muted loop></video>
                 </div>
                 <div class="checklist-servicio">
                     <div class="service">
@@ -42,7 +42,7 @@
         <?php } ?>
 
         <?php
-        $consulta = "SELECT*FROM fisica WHERE Rutinas='Press de banca con barra'";
+        $consulta = "SELECT*FROM fisica WHERE Rutinas='Fondos'";
         $resultado = mysqli_query($con, $consulta);
 
         while ($row = mysqli_fetch_array($resultado)) {
@@ -51,7 +51,9 @@
             $Description = $row['Descripcion'];
         ?>
             <div class="contenedor-servicio">
-                <img src="CSS/IMG/public/fondo.webp" height="350px" width="420px" alt="">
+                <div class="contenedor-servicio-video">
+                    <video src="data:Video/mp4;base64, <?php echo base64_encode($row['Videos']); ?>" height="350px" width="420px" /*controls*/ autoplay muted loop></video>
+                </div>
                 <div class="checklist-servicio">
                     <div class="service">
                         <h2 class="subtitulo">Fondos</h2>
@@ -71,7 +73,7 @@
         <?php } ?>
 
         <?php
-        $consulta = "SELECT*FROM fisica WHERE Rutinas='Press de banca con barra'";
+        $consulta = "SELECT*FROM fisica WHERE Rutinas='Press banca inclinado'";
         $resultado = mysqli_query($con, $consulta);
 
         while ($row = mysqli_fetch_array($resultado)) {
@@ -80,7 +82,9 @@
             $Description = $row['Descripcion'];
         ?>
             <div class="contenedor-servicio">
-                <img src="CSS/IMG/public/Press_inclinado.gif" height="350px" width="420px" alt="">
+                <div class="contenedor-servicio-video">
+                    <video src="data:Video/mp4;base64, <?php echo base64_encode($row['Videos']); ?>" height="350px" width="420px" /*controls*/ autoplay muted loop></video>
+                </div>
                 <div class="checklist-servicio">
                     <div class="service">
                         <h2 class="subtitulo">Press banca inclinado</h2>
@@ -109,7 +113,9 @@
             $Description = $row['Descripcion'];
         ?>
             <div class="contenedor-servicio">
-                <img src="CSS/IMG/public/aperturas_con_mancuernas.gif" height="350px" width="420px" alt="">
+                <div class="contenedor-servicio-video">
+                    <video src="data:Video/mp4;base64, <?php echo base64_encode($row['Videos']); ?>" height="350px" width="420px" /*controls*/ autoplay muted loop></video>
+                </div>
                 <div class="checklist-servicio">
                     <div class="service">
                         <h2 class="subtitulo">Aperturas con mancuernas</h2>

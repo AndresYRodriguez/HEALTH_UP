@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit2b06e47c79a4e03b137ea0582780eba0
+class ComposerStaticInit268ef6dd4d0bda9b58c61d8331732b27
 {
     public static $files = array (
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
@@ -38,8 +38,8 @@ class ComposerStaticInit2b06e47c79a4e03b137ea0582780eba0
     public static $prefixDirsPsr4 = array (
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -678,6 +678,7 @@ class ComposerStaticInit2b06e47c79a4e03b137ea0582780eba0
         'SebastianBergmann\\Type\\NeverType' => __DIR__ . '/..' . '/sebastian/type/src/type/NeverType.php',
         'SebastianBergmann\\Type\\NullType' => __DIR__ . '/..' . '/sebastian/type/src/type/NullType.php',
         'SebastianBergmann\\Type\\ObjectType' => __DIR__ . '/..' . '/sebastian/type/src/type/ObjectType.php',
+        'SebastianBergmann\\Type\\Parameter' => __DIR__ . '/..' . '/sebastian/type/src/Parameter.php',
         'SebastianBergmann\\Type\\ReflectionMapper' => __DIR__ . '/..' . '/sebastian/type/src/ReflectionMapper.php',
         'SebastianBergmann\\Type\\RuntimeException' => __DIR__ . '/..' . '/sebastian/type/src/exception/RuntimeException.php',
         'SebastianBergmann\\Type\\SimpleType' => __DIR__ . '/..' . '/sebastian/type/src/type/SimpleType.php',
@@ -702,9 +703,9 @@ class ComposerStaticInit2b06e47c79a4e03b137ea0582780eba0
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit2b06e47c79a4e03b137ea0582780eba0::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit2b06e47c79a4e03b137ea0582780eba0::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit2b06e47c79a4e03b137ea0582780eba0::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit268ef6dd4d0bda9b58c61d8331732b27::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit268ef6dd4d0bda9b58c61d8331732b27::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit268ef6dd4d0bda9b58c61d8331732b27::$classMap;
 
         }, null, ClassLoader::class);
     }

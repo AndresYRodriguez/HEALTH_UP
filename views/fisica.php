@@ -371,7 +371,7 @@ if (isset($_POST['public'])) {
                     <figure>
                         <img src="data:Imagen/jpg;base64, <?php echo base64_encode($row['Imagen']); ?>" alt="" height='341px' width='500px'>
                         <div class="capa">
-                            <a href="rutinas.php">
+                            <a href="./views/antebrazo.php">
                                 <h3 class="text"><?php echo $row['Titulo']; ?></h3>
                             </a>
                         </div>

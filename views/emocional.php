@@ -126,22 +126,60 @@ if (isset($_POST['public'])) {
             <?php } ?>
 
             <?php
-            $consulta = "SELECT*FROM categoria WHERE Titulo='tristeza'";
+            $consulta = "SELECT*FROM categoria WHERE Titulo='miedo'";
             $resultado = mysqli_query($con, $consulta);
 
             while ($row = mysqli_fetch_assoc($resultado)) {
             ?>
-            <div class="contenedor">
-                <figure>
-                    <img src="data:Imagen/jpg;base64, <?php echo base64_encode($row['Imagen']) ?>" alt="">
-                    <div class="capa">
-                        <a href="otra_pagina.html">
-                            <h3 class="text"><?php echo $row ['Titulo'] ?></h3>
-                        </a>
-                    </div>
-                </figure>
-                <p class="text"><?php echo $row['Descripcion'] ?></p>
-            </div>
+                <div class="contenedor">
+                    <figure>
+                        <img src="data:Imagen/jpg;base64, <?php echo base64_encode($row['Imagen']) ?>" alt="">
+                        <div class="capa">
+                            <a href="./views/miedo.php">
+                                <h3 class="text"><?php echo $row['Titulo'] ?></h3>
+                            </a>
+                        </div>
+                    </figure>
+                    <p class="text"><?php echo $row['Descripcion'] ?></p>
+                </div>
+            <?php } ?>
+
+            <?php
+            $consulta = "SELECT*FROM categoria WHERE Titulo='Estres'";
+            $resultado = mysqli_query($con, $consulta);
+
+            while ($row = mysqli_fetch_assoc($resultado)) {
+            ?>
+                <div class="contenedor1">
+                    <p class="text"><?php echo $row['Descripcion']; ?></p>
+                    <figure>
+                        <img src="data:Imagen/jpg;base64, <?php echo base64_encode($row['Imagen']); ?>" alt="" height='250px' width='550px'>
+                        <div class="capa">
+                            <a href="./views/estres.php">
+                                <h3 class="text"><?php echo $row['Titulo']; ?></h3>
+                            </a>
+                        </div>
+                    </figure>
+                </div>
+            <?php } ?>
+
+            <?php
+            $consulta = "SELECT*FROM categoria WHERE Titulo='Agotamiento mental'";
+            $resultado = mysqli_query($con, $consulta);
+
+            while ($row = mysqli_fetch_assoc($resultado)) {
+            ?>
+                <div class="contenedor">
+                    <figure>
+                        <img src="data:Imagen/jpg;base64, <?php echo base64_encode($row['Imagen']) ?>" alt="">
+                        <div class="capa">
+                            <a href="./views/agotamiento.php">
+                                <h3 class="text"><?php echo $row['Titulo'] ?></h3>
+                            </a>
+                        </div>
+                    </figure>
+                    <p class="text"><?php echo $row['Descripcion'] ?></p>
+                </div>
             <?php } ?>
         <?php endif; ?>
     <?php endif; ?>

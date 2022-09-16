@@ -12,98 +12,93 @@
     <section class="service contenedor" id="servicios">
         <h2 class="subtitulo">Rutina de control de ira</h2>
         <?php
-        $consulta = "SELECT*FROM socioemocional WHERE Titulo='Mejora tu comunicacion'";
+        $consulta = "SELECT*FROM socioemocional WHERE Titulo='Expresa tu enojo'";
         $resultado = mysqli_query($con, $consulta);
 
         while ($row = mysqli_fetch_assoc($resultado)) {
-            $Titulo = $row['Titulo'];
-            $Videos = $row['Videos'];
-            $Audios = $row['Audios'];
-            $Description = $row['Descripcion'];
         ?>
-            <div class="contenedor-servicio">
-                <div class="contenedor-servicio-multimedia">
-                    <div class="video">
-                        <h2 class="muñtimedia">Video</h2>
-                        <?php echo ("<video src='$Videos' controls='controls' autoplay muted height='250px' width='420px'/>"); ?>
+            <main>
+                <div class="contenedor-servicio">
+                    <div class="contenedor-servicio-multimedia">
+                        <div class="video">
+                            <h2 class="muñtimedia">Video</h2>
+                            <video src='data:Video/mp4;base64, <?php echo base64_encode($row['Videos']); ?>' controls='controls' autoplay muted height='250px' width='420px'></video>
+                        </div>
+                        <div class="audio">
+                            <h2 class="muñtimedia">Audio</h2>
+                            <audio src="data:Audio/mp3;base64, <?php echo base64_encode($row['Audios']); ?>" controls='controls' muted></audio>
+                        </div>
                     </div>
-                    <div class="audio">
-                        <h2 class="muñtimedia">Audio</h2>
-                        <?php echo "<audio src='$Audios' controls='controls' muted></audio>"; ?>
+                    <div class="checklist-servicio">
+                        <div class="service">
+                            <h2 class="subtitulo"><?php echo $row['Titulo']; ?></h2>
+                            <h3 class="n-service"><span class="number">1</span>paso</h3>
+                            <p class="text">Una vez ya estés algo más calmado y tengas la mente menos centrada en la ira del momento, haz una pequeña reflexión de en donde encuentres inicialmente cuál fue la causa de tu ira.</p>
+                            <h3 class="n-service"><span class="number">2</span>paso</h3>
+                            <p class="text">Una vez ya estés algo más calmado y tengas la mente menos centrada en la ira del momento, haz una pequeña reflexión de en donde encuentres inicialmente cuál fue la causa de tu ira.</p>
+                            <h3 class="n-service"><span class="number">3</span>paso</h3>
+                            <p class="text">Por ultimo después de tu reflexión deja salir tus pensamientos y sentimientos para asi no tenerlos adentro ya que esto a la larga pueden hacerte daño.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="checklist-servicio">
-                    <div class="service">
-                        <h2 class="subtitulo"><?php echo ("$Titulo"); ?></h2>
-                        <h3 class="n-service"><span class="number">1</span>paso</h3>
-                        <p class="text"><?php echo ("$Description"); ?></p>
-                    </div>
-                </div>
-            <?php } ?>
+                <?php } ?>
 
-            <?php
-            $consulta = "SELECT*FROM socioemocional WHERE Titulo='Mejora tu comunicacion'";
-            $resultado = mysqli_query($con, $consulta);
+                <?php
+                $consulta = "SELECT*FROM socioemocional WHERE Titulo='Haz algo de ejercicio'";
+                $resultado = mysqli_query($con, $consulta);
 
-            while ($row = mysqli_fetch_assoc($resultado)) {
-                $Titulo = $row['Titulo'];
-                $Videos = $row['Videos'];
-                $Audios = $row['Audios'];
-                $Description = $row['Descripcion'];
-            ?>
-                <main>
+                while ($row = mysqli_fetch_assoc($resultado)) {
+                ?>
                     <div class="contenedor-servicio">
-                        <img src="./CSS/IMG/public/expresion.gif" height="350px" width="420px" alt="">
+                        <div class="contenedor-servicio-multimedia">
+                            <div class="video">
+                                <h2 class="muñtimedia">Video</h2>
+                                <video src='data:Video/mp4;base64, <?php echo base64_encode($row['Videos']); ?>' controls='controls' autoplay muted height='250px' width='420px'></video>
+                            </div>
+                            <div class="audio">
+                                <h2 class="muñtimedia">Audio</h2>
+                                <audio src="data:Audio/mp3;base64, <?php echo base64_encode($row['Audios']); ?>" controls='controls' muted></audio>
+
+                            </div>
+                        </div>
                         <div class="checklist-servicio">
                             <div class="service">
-                                <h2 class="subtitulo">Una vez que te hayas calmado, expresa tu malestar</h2>
+                                <h2 class="subtitulo"><?php echo $row['Titulo']; ?></h2>
                                 <h3 class="n-service"><span class="number">1</span>paso</h3>
-                                <p class="text">Tan pronto puedas pensar con claridad, expresa tu frustración de una manera asertiva, pero sin generar confrontación. Habla de tus preocupaciones y necesidades de forma clara y directa, sin lastimar a otros ni tratar de controlarlos.</p>
+                                <p class="text">La actividad física puede ayudar a reducir el estrés que puede causarte ira. Si sientes que la ira está aumentando, sal a dar una caminata vigorosa o a correr. O haz alguna actividad física que disfrutes durante algún tiempo</p>
                             </div>
                         </div>
                     <?php } ?>
 
                     <?php
-                    $consulta = "SELECT*FROM socioemocional WHERE Titulo='Mejora tu comunicacion'";
+                    $consulta = "SELECT*FROM socioemocional WHERE Titulo='Cuenta hasta sentirte mejor'";
                     $resultado = mysqli_query($con, $consulta);
 
                     while ($row = mysqli_fetch_assoc($resultado)) {
-                        $Titulo = $row['Titulo'];
-                        $Videos = $row['Videos'];
-                        $Audios = $row['Audios'];
-                        $Description = $row['Descripcion'];
                     ?>
                         <div class="contenedor-servicio">
-                            <img src="./CSS/IMG/public/calentar.gif" height="350px" width="420px" alt="">
+                            <div class="contenedor-servicio-multimedia">
+                                <div class="video">
+                                    <h2 class="muñtimedia">Video</h2>
+                                    <video src='data:Video/mp4;base64, <?php echo base64_encode($row['Videos']); ?>' controls='controls' autoplay muted height='250px' width='420px'></video>
+                                </div>
+                                <div class="audio">
+                                    <h2 class="muñtimedia">Audio</h2>
+                                    <audio src="data:Audio/mp3;base64, <?php echo base64_encode($row['Audios']); ?>" controls='controls' muted></audio>
+
+                                </div>
+                            </div>
                             <div class="checklist-servicio">
                                 <div class="service">
-                                    <h2 class="subtitulo">Haz algo de ejercicio</h2>
+                                    <h2 class="subtitulo"><?php echo $row['Titulo']; ?></h2>
                                     <h3 class="n-service"><span class="number">1</span>paso</h3>
-                                    <p class="text">La actividad física puede ayudar a reducir el estrés que puede causarte ira. Si sientes que la ira está aumentando, sal a dar una caminata vigorosa o a correr. O haz alguna actividad física que disfrutes durante algún tiempo</p>
+                                    <p class="text">Este es uno de los pasos más fáciles y lo más probable es que lo hayas escuchado,en lo que consiste esta parte de la rutina es que cuando te sientas enojado para centrarte en otra cosa y calmarte empieza a contar del 1 al 20.</p>
+                                    <h3 class="n-service"><span class="number">2</span>paso</h3>
+                                    <p class="text">Mientras estés en el proceso de contar recuerda centrarte en los números aparte de respirar de una manera calmada y profunda.</p>
+                                    <h3 class="n-service"><span class="number">3</span>paso</h3>
+                                    <p class="text">Cuenta hasta el número que sea necesario y hasta que te sientas más centrado.</p>
                                 </div>
                             </div>
                         <?php } ?>
-
-                        <?php
-                        $consulta = "SELECT*FROM socioemocional WHERE Titulo='Mejora tu comunicacion'";
-                        $resultado = mysqli_query($con, $consulta);
-
-                        while ($row = mysqli_fetch_assoc($resultado)) {
-                            $Titulo = $row['Titulo'];
-                            $Videos = $row['Videos'];
-                            $Audios = $row['Audios'];
-                            $Description = $row['Descripcion'];
-                        ?>
-                            <div class="contenedor-servicio">
-                                <img src="./CSS/IMG/public/razon.gif" height="350px" width="420px" alt="">
-                                <div class="checklist-servicio">
-                                    <div class="service">
-                                        <h2 class="subtitulo">Racionaliza la situación para controlar la ira</h2>
-                                        <h3 class="n-service"><span class="number">1</span>paso</h3>
-                                        <p class="text">Cuando la ira empieza a dominar no es posible pensar con claridad. Esto es un problema que tiene solución. En primer lugar, procura evitar las palabras “nunca” y “siempre”. Si justificas el enojo, no podrás solucionar el problema. De esta forma, cambia el “siempre me enojo cuando llego tarde” o el “nunca puedo estar sereno en un atasco” por un “haré lo posible por serenarme la próxima vez que no llegue a tiempo o que quede atascado en la carretera”.</p>
-                                    </div>
-                                </div>
-                            <?php } ?>
     </section>
     <div class="checklist-servicio">
         <div class="service">

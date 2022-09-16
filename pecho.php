@@ -52,7 +52,7 @@ if (isset($_SESSION['Correo'])) {
             <div class="menu">
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="home.php?Id_user=<?php echo $_SESSION['Correo'] ?>">
+                        <a href="perfil.php?Id_user=<?php echo $_SESSION['Correo'] ?>">
                             <i class='bx bx-user icons'></i>
                             <span class="text nav-text">Perfil</span>
                         </a>
