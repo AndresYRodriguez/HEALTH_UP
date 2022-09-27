@@ -5,7 +5,8 @@ define('SECRET_IV', '235468');*/
 
 require './config/config.php';
 
-class ContraEncrip {
+class ContraEncript
+{
     public static function encryption($string)
     {
         $output = FALSE;
@@ -35,7 +36,7 @@ if (isset($_SESSION['Correo'])) {
         $IdGenero = $row['Id_genero'];
         $Fecha_nacimiento = $row['Fecha_nacimiento'];
         $Correo = $row['Correo'];
-        $Contraseña = ContraEncrip::decryption($row['Contraseña']);
+        $Contraseña = ContraEncript::decryption($row['Contraseña']);
     }
 }
 
@@ -51,12 +52,14 @@ if (isset($_POST['actualizar'])) {
     $Nombres = $_POST['Nombres'];
     $Apellidos = $_POST['Apellidos'];
     $Contraseña = $_POST['Contraseña'];
-    $EncripContraseña = Contraseña::encryption($Contraseña);
+    $EncripContraseña = ContraEncript::encryption($Contraseña);
 
     $actualizar = mysqli_query($con, "UPDATE usuario SET Nombres = '$Nombres', Apellidos = '$Apellidos', Contraseña = '$EncripContraseña' WHERE Correo='$_SESSION[Correo]'");
 
     if ($actualizar) {
-        header('Location: ./perfil.php');
+        $url = './perfil.php';
+        echo '<meta http-equiv=refresh content="1; ' . $url . '">';
+        //die;
     }
 }
 
