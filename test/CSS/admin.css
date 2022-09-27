@@ -1,0 +1,328 @@
+body.dark {
+    --body-color: #18191a;
+    --sidebar-color: #242526;
+    --primary-color: #695CFE;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+}
+
+.hero__cta {
+    text-decoration: none;
+    color: #695CFE;
+    background-color: #fff;
+    padding: 15px 60px;
+    border: 1px solid;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+body.dark .hero__cta {
+    background: var(--sidebar-color);
+}
+
+.hero__cta:hover {
+    background-color: #695CFE;
+    color: #ffffff;
+}
+
+body.dark .hero__cta:hover {
+    background-color: #695CFE;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s .9s;
+    --transform: translateY(-100vh);
+    --transition: transform .8s;
+}
+
+.modal--show {
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+    --transform: translateY(0);
+    --transition: transform .8s .8s;
+}
+
+.modal__container {
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition: var(--transition);
+}
+
+body.dark .modal__container {
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: #303030;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition: var(--transition);
+}
+
+.modal__title {
+    color: #9f8ad0;
+    font-size: 2rem;
+}
+
+.modal__paragraph {
+    margin-bottom: 10px;
+}
+
+form .grupo {
+    position: relative;
+    margin: 25px;
+}
+
+.modal2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s .9s;
+    --transform: translateY(-100vh);
+    --transition: transform .8s;
+}
+
+.modal-show {
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+    --transform: translateY(0);
+    --transition: transform .8s .8s;
+}
+
+.modal_container {
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition: var(--transition);
+}
+
+body.dark .modal_container {
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: #303030;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition: var(--transition);
+}
+
+.modal_title {
+    color: #9f8ad0;
+    font-size: 2rem;
+}
+
+.modal_paragraph {
+    margin-bottom: 10px;
+}
+
+.formu {
+    background: none;
+    color: #c6c6c6;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #49454567;
+}
+.formu:focus {
+    outline: none;
+    color: #5e5d5d;
+}
+
+label {
+    color: var(--colorTextos);
+    font-size: 16px;
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    transition: 0.5s ease all;
+    pointer-events: none;
+}
+
+.formu:focus~label,
+.formu:valid~label {
+    top: -14px;
+    font-size: 12px;
+    color: #2196f3;
+}
+
+.barra {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.barra::before {
+    content: "";
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    position: absolute;
+    background: linear-gradient(to right, #B06AB3, #4568DC);
+    transition: 0.3s ease width;
+    left: 0;
+}
+
+input:focus~.barra::before {
+    width: 100%;
+}
+
+.crear {
+    text-decoration: none;
+    color: #fff;
+    background-color: #695CFE;
+    padding: 1em 3em;
+    border: 1px solid;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+body.dark .crear {
+    background-color: #695CFE;
+}
+
+.crear:hover {
+    color: #695CFE;
+    background-color: rgb(255, 255, 255);
+}
+
+body.dark .crear:hover {
+    color: #695CFE;
+    background-color: var(--sidebar-color);
+}
+
+.modal__close {
+    text-decoration: none;
+    color: #fff;
+    background-color: #d82323;
+    padding: 1em 3em;
+    border: 1px solid;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+body.dark .modal__close {
+    background-color: #d82323;
+}
+
+.modal__close:hover {
+    color: #d82323;
+    background-color: rgb(255, 255, 255);
+}
+
+body.dark .modal__close:hover {
+    color: #d82323;
+    background-color: var(--sidebar-color);
+}
+
+.Actualizar {
+    text-decoration: none;
+    color: #fff;
+    background-color: #695CFE;
+    padding: 1em 3em;
+    border: 1px solid;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+body.dark .Actualizar {
+    background-color: #695CFE;
+}
+
+.Actualizar:hover {
+    color: #695CFE;
+    background-color: rgb(255, 255, 255);
+}
+
+body.dark .Actualizar:hover {
+    color: #695CFE;
+    background-color: var(--sidebar-color);
+}
+
+.modal_close {
+    text-decoration: none;
+    color: #fff;
+    background-color: #d82323;
+    padding: 1em 3em;
+    border: 1px solid;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+body.dark .modal_close {
+    background-color: #d82323;
+}
+
+.modal_close:hover {
+    color: #d82323;
+    background-color: rgb(255, 255, 255);
+}
+
+body.dark .modal_close:hover {
+    color: #d82323;
+    background-color: var(--sidebar-color);
+}
