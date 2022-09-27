@@ -6,7 +6,7 @@ define('SECRET_IV', '235468');
 
 include('config/config.php');
 
-class Contraseña
+class ContraEncrip
 {
   public static function encryption($string)
   {
@@ -28,7 +28,7 @@ class Contraseña
 
 $Correo = $_POST['Correo'];
 $Contraseña = ($_POST['Contraseña']);
-$DesenContraseña = Contraseña::encryption($Contraseña);
+$DesenContraseña = ContraEncrip::encryption($Contraseña);
 
 $sql = mysqli_query($con, "SELECT*FROM usuario WHERE Correo='$Correo' AND Contraseña='$DesenContraseña'");
 

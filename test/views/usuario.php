@@ -6,7 +6,7 @@ define('SECRET_IV', '235468');
 
 require './config/config.php';
 
-class Contraseña
+class ContraEncrip
 {
     public static function encryption($string)
     {
@@ -41,7 +41,7 @@ if (isset($_SESSION['Correo'])) {
         $IdGenero = $row['Id_genero'];
         $Fecha_nacimiento = $row['Fecha_nacimiento'];
         $Correo = $row['Correo'];
-        $Contraseña = Contraseña::decryption($row['Contraseña']);
+        $Contraseña = ContraEncrip::decryption($row['Contraseña']);
     }
 }
 //genero user
