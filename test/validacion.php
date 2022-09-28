@@ -38,8 +38,14 @@ if (mysqli_num_rows($sql) > 0) {
   header("Location: ./home.php");
 } else {
   include("signin.php");
-  ?>
-  <h1 class="bad">Los datos no coinciden</h1>
-  <?php
+?>
+  <script type="text/javascript">
+    Swal.fire({
+      icon: 'error',
+      title: 'Validacion',
+      text: 'Los datos no coinciden',
+    })
+  </script>
+<?php
 }
 ?>

@@ -50,6 +50,10 @@ form .grupo {
   cursor: pointer;
 }
 
+body.dark .form i {
+  color: var(--text-color);
+}
+
 .form:focus~.i::before {
   width: 100%;
 } 

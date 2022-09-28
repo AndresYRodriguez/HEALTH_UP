@@ -40,18 +40,38 @@ if (isset($_POST['Registrarse'])) {
     $VerCorrreo = mysqli_query($con, "SELECT*FROM usuario WHERE Correo='$Correo'");
 
     if (mysqli_num_rows($VerCorrreo) > 0) {
-      echo '<h3 class="bad">Ya existe un usuario, intente nuevamente o verifique si ya tiene cuenta</h3>';
+?>
+      <script type="text/javascript">
+        Swal.fire({
+          icon: 'error',
+          title: 'Validacion',
+          text: 'Ya existe un usuario, intente nuevamente o verifique si ya tiene cuenta'
+        })
+      </script>
+    <?php
       exit();
     }
 
     $resultado = mysqli_query($con, $consulta);
     if ($resultado) {
-?>
-      <h3 class="ok">Se ha inscripto correctamente</h3>
+    ?>
+      <script type="text/javascript">
+        Swal.fire({
+          icon: 'success',
+          title: 'Validacion',
+          text: 'Se ha inscripto correctamente'
+        })
+      </script>
     <?php
     } else {
     ?>
-      <h3 class="bad">No fue posible registrarse</h3>
+      <script type="text/javascript">
+        Swal.fire({
+          icon: 'error',
+          title: 'Validacion',
+          text: 'No fue posible registrarse'
+        })
+      </script>
 <?php
     }
   }
