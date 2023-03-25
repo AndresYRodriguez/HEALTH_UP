@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* === color del fondo modo oscuro ===*/
+
+body.dark {
+  --body-color: #18191a;
+  --sidebar-color: #242526;
+  --primary-color: #695CFE;
+  --primary-color-light: #3a3b3c;
+  --toggle-color: #fff;
+  --text-color: #ccc;
+}
+
+.Contenedor{
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 11px;
+  position: absolute;
+  padding: 25px 30px;
+  border-radius: 26px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+body.dark .Contenedor {
+    background-color: var(--sidebar-color);
+    color: var(--text-color);
+}
+
+.Contenedor .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.Contenedor .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.Contenedor form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+
+form .formu-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.formu {
+  background: none;
+  color: #c6c6c6;
+  font-size: 18px;
+  padding: 9px 9px 9px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #49454567;
+}
+
+.formu:focus {
+  outline: none;
+  color: #403f3f;
+}
+
+body.dark .formu:focus {
+  outline: none;
+  color: var(--text-color);
+}
+
+.barra {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.barra::before {
+  content: "";
+  height: 2px;
+  width: 0%;
+  bottom: 0;
+  position: absolute;
+  background: linear-gradient(to right, #B06AB3, #4568DC);
+  transition: 0.3s ease width;
+  left: 0;
+}
+
+input:focus~.barra::before {
+  width: 100%;
+}
+
+.user-details i {
+  position: absolute;
+  top: 70%;
+  right: 5%;
+  transform: translateY(-50%);
+  color: var(--colorTextos);
+  font-size: 21px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+body.dark .user-details i {
+  color: var(--text-color);
+}
+
+.user-details:focus~.i::before {
+  width: 100%;
+} 
+
+
+.submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.update {
+  margin: 11px;
+  text-decoration: none;
+  color: #695CFE;
+  background-color: #fff;
+  padding: 0.5em 0.26em;
+  border: 1px solid;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 300;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.update:hover {
+  color: #fff;
+  background-color: #695CFE;
+}
+
+body.dark .update {
+  transition: 0.2s;
+  background: var(--sidebar-color);
+}
+
+body.dark .update:hover {
+  background-color: #695CFE;
+}
+
+.delete {
+  margin: 11px;
+  text-decoration: none;
+  color: #d82323;
+  background-color: #fff;
+  padding: 0.5em 0.26em;
+  border: 1px solid;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 300;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+body.dark .delete {
+  transition: 0.2s;
+  background: var(--sidebar-color);
+}
+
+
+.delete:hover {
+  color: #fff;
+  background-color: #d82323;
+}
+
+body.dark .delete:hover {
+  background-color: #d82323;
+}
+
+form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #9b59b6;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .submit input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .Contenido form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+
+
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+body.dark {
+  --body-color: #18191a;
+  --sidebar-color: #242526;
+  --primary-color: #695CFE;
+  --primary-color-light: #3a3b3c;
+  --toggle-color: #fff;
+  --text-color: #ccc;
+}
+
+.titulo {
+  font-size: 26px;
+  font-weight: 126;
+  text-align: center;
+  position: relative;
+  color: #9f8ad0;
+}
+
+form {
+  background: transparent;
+  border: none;
+  width: 726px;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 11px;
+  position: absolute;
+
+}
+
+form .grupo {
+  position: relative;
+  margin: 11px;
+}
+
+body.dark label {
+    color: var(--text-color);
+}
+
+.form i {
+  position: absolute;
+  top: 66%;
+  right: 2%;
+  transform: translateY(-50%);
+  color: var(--colorTextos);
+  font-size: 21px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+body.dark .form i {
+  color: var(--text-color);
+}
+
+.form:focus~.i::before {
+  width: 100%;
+} 
+
+.formu {
+  background: none;
+  color: #c6c6c6;
+  font-size: 18px;
+  padding: 9px 9px 9px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #49454567;
+}
+
+.formu:focus {
+  outline: none;
+  color: #5e5d5d;
+}
+
+.barra {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.barra::before {
+  content: "";
+  height: 2px;
+  width: 0%;
+  bottom: 0;
+  position: absolute;
+  background: linear-gradient(to right, #B06AB3, #4568DC);
+  transition: 0.3s ease width;
+  left: 0;
+}
+
+input:focus~.barra::before {
+  width: 100%;
+}
+
+label {
+  text-align: center;
+}
+
+.form {
+  padding: 11px;
+  border-radius: 11px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body.dark .form {
+  background: var(--sidebar-color);
+}
+
+.submit {
+  position: relative;
+  padding: 11px;
+  top: 50px;
+  transform: translateY(-50%);
+  display: block;
+  width: 55%;
+  margin: 11px auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.actualizar {
+  text-decoration: none;
+  color: #695CFE;
+  background-color: #fff;
+  padding: 0.5em 0.26em;
+  border: 1px solid;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 300;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.actualizar:hover {
+  color: #fff;
+  background-color: #695CFE;
+}
+
+body.dark .actualizar {
+  transition: 0.2s;
+  background: var(--sidebar-color);
+}
+
+body.dark .actualizar:hover {
+  background-color: #695CFE;
+}
+
+.delete {
+  text-decoration: none;
+  color: #d82323;
+  background-color: #fff;
+  padding: 0.5em 0.26em;
+  border: 1px solid;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 300;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+body.dark .delete {
+  transition: 0.2s;
+  background: var(--sidebar-color);
+}
+
+
+.delete:hover {
+  color: #fff;
+  background-color: #d82323;
+}
+
+body.dark .delete:hover {
+  background-color: #d82323;
+}*/

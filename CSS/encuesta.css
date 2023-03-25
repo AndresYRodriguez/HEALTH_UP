@@ -1,0 +1,38 @@
+body.dark {
+    --body-color: #18191a;
+    --sidebar-color: #242526;
+    --primary-color: #695CFE;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+}
+
+body {
+    background-color: #E4E9F7;
+}
+
+.btn {
+    text-decoration: none;
+    color: #695CFE;
+    background-color: #fff;
+    padding: 8px 16px;
+    border: 1px solid;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+body.dark .btn {
+    background: var(--sidebar-color);
+}
+
+.btn:hover {
+    background-color: #695CFE;
+    color: #ffffff;
+}
+
+body.dark .btn:hover {
+    background-color: #695CFE;
+}

@@ -1,0 +1,78 @@
+
+/* === Modo colores ===*/
+
+:root {
+    /* ===== Colors ===== */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #695CFE;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+
+/*===Estilo de home===*/
+td{
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+p {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 20px;
+}
+
+body.dark p {
+    color: var(--text-color);
+}
+  
+.section{
+    width: 250px;
+    height: 50vh;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.box{
+    width: 250px;
+    height: 50vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    margin: 1.5%;
+}
+.box img{
+    width: 250PX;
+    height: 470PX;
+    object-fit: cover;
+}
+.box .hover{
+    width: 0%;
+    height: 50vh;
+    background-color: rgba(56, 53, 53, 0.568);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.hover h1{
+    color:aliceblue;
+    text-shadow: 1px 1px 1px black;
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+.box:hover .hover{
+    width: 100%;
+}
